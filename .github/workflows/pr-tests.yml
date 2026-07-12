@@ -1,6 +1,8 @@
 name: Pull Request Tests
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -12,7 +14,6 @@ jobs:
     - name: Code auschecken
       uses: actions/checkout@v4
 
-    private-token-setup:
     - name: Java JDK 17 einrichten
       uses: actions/setup-java@v4
       with:
