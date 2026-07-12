@@ -11,3 +11,4 @@ Eine Maven-Anwendung für das Modul *Open Source Software Development* an der HT
 mvn clean test
 mvn clean deploy
 ```
+
