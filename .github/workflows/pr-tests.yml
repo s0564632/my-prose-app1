@@ -1,4 +1,4 @@
-name: Pull Request Tests
+kname: Pull Request Tests
 
 on:
   push:
@@ -11,15 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Aktualisiert auf die für Node24 optimierte Version 4 (oder höher)
+    # Upgrade auf die Node24-kompatible Unterversion
     - name: Code auschecken
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      uses: actions/checkout@v4.2.2
 
-    # Aktualisiert auf die aktuelle Version v4.3.0+ / v5 mit Node24-Support
+    # Upgrade auf die Node24-kompatible Unterversion
     - name: Java JDK 21 einrichten
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v4.3.0
       with:
         java-version: '21'
         distribution: 'temurin'
@@ -32,3 +30,4 @@ jobs:
 
     - name: Automated Maven Tests ausführen
       run: mvn clean test
+
