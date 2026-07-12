@@ -61,7 +61,7 @@ URL zum Repository: [https://maven.pkg.github.com/bs-jokri/prose-builder](https:
 
 ## Beitrag
 
-Beiträge und Verbesserungen sind herzlich willkommen! Um mitzumachen, folge diesen Schritten:
+Beiträge und Verbesserungen sind gerne gesehen! Um mitzumachen, folge diesen Schritten:
 
 1. Forke das Repository.
 2. Erstelle einen neuen Feature-Branch (`git checkout -b feature/neues-feature`).
