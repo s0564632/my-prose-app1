@@ -9,6 +9,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    
+    # Erlaubt der Pipeline ausdrücklich das Lesen von externen GitHub Packages
+    permissions:
+      contents: read
+      packages: read
 
     steps:
     - name: Code auschecken
