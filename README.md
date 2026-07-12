@@ -12,3 +12,6 @@ mvn clean test
 mvn clean deploy
 ```
 
+
+## CI/CD Status
+Die Pipeline wurde erfolgreich eingerichtet und validiert.
