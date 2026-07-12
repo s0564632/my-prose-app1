@@ -1,78 +1,105 @@
 # My-Prose-App1
 
-My-Prose-App1 ist ein Beispiel für die Verwendung des Prose-Builder-Projekts im Modul *Open Source Software Development* an der HTW-Berlin. Es zeigt, wie mit dem ProseBuilder aus der prose_builder Bibliothek einfache Sätze zu Prosatexten zusammengefügt werden können.
+Dieses Softwareprojekt demonstriert die praktische Anwendung der externen Programmbibliothek `prose_builder` im Rahmen des Moduls *Open Source Software Development* an der HTW-Berlin. Die Anwendung visualisiert, wie isolierte Satz-Objekte über den zentralen `ProseBuilder` dynamisch zu zusammenhängenden Prosatexten aggregiert werden.
 
-Prose-Builder ist ein einfaches Open-Source-Tool zur Erstellung von Prosatexten, basierend auf importierten Sätzen. Es ermöglicht Entwickler:innen, einfach Sätze zu registrieren und daraus fließende Prosa zu generieren.
+Der zugrundeliegende *Prose-Builder* fungiert als modulares Open-Source-Werkzeug, das importierte Textbausteine registriert und in fließende Textstrukturen übersetzt.
 
-## Überblick
+## Systemüberblick
 
-My-Prose-App1 demonstriert die Funktionalität von Prose-Builder, indem es einfache Sätze registriert und daraus eine komplette Prosa generiert, die dann in der Konsole ausgegeben wird.
+Die Applikation bindet das vorgegebene `Sentence`-Interface ein, registriert zwei eigenständige Satz-Klassen auf der Konsole und gibt das generierte Gesamtergebnis direkt im Terminal aus.
 
-## Voraussetzungen
+## Systemvoraussetzungen
 
-* **Java:** Version 21
-* **Build-System:** Maven 3.x
+* **Laufzeitumgebung:** Java JDK 21
+* **Build-Management:** Maven 3.x
+* **Plattform-Validierung:** GitHub Actions (Node.js 24 kompatibel)
 
-## Features
+## Leistungsumfang (Features)
 
-* **Integration von Prose-Builder:** Nutzung der ProseBuilder-Klasse für einfache Prosa-Erstellung.
-* **Beispielimplementierung:** Enthält zwei konkrete Implementierungen des Sentence-Interfaces (`FirstSentence` und `SecondSentence`).
-* **Automatisiertes Testen:** Integrierte JUnit 5 Modultests zur Verifizierung von Inhalt und Satzlänge.
-* **CI/CD Integration:** GitHub Actions Workflow zur automatisierten Validierung bei Push-Events.
+* **Modulare Integration:** Nahtlose Anbindung der `ProseBuilder`-API.
+* **Mehrteilige Implementierung:** Getrennte Datenhaltung über `FirstSentence` und `SecondSentence`.
+* **Qualitätssicherung:** Unabhängige Testsuite via JUnit 5 zur Längen- und Inhaltsprüfung.
+* **Continuous Integration:** Automatisierte Workflow-Prüfung bei jedem Code-Push.
 
-## Installation
+## Installation und Setup
 
-Um die Applikation zu installieren und auszuführen, wird Maven benötigt, um die Abhängigkeiten zu verwalten.
+Für die lokale Replikation und Bereitstellung wird eine aktive Maven-Infrastruktur benötigt.
 
-1. **Klonen des Repositories:**
+1. **Repository lokal spiegeln:**
    ```bash
    git clone https://github.com
    cd my-prose-app1
    ```
 
-2. **Erstellen des Projekts mit Maven:**
+2. **Projektreferenz kompilieren:**
    ```bash
    mvn clean install
    ```
 
-## Verwendung
+## Programmausführung
 
-Um My-Prose-App1 auszuführen, kann der folgende Befehl im Terminal verwendet werden:
+Der Start der Anwendung erfolgt direkt über das Maven-Execution-Plugin im Systemterminal:
 
 ```bash
 mvn exec:java -Dexec.mainClass="de.htw_berlin.fb4.calculator.unisono.my_prose_app.MainApp"
 ```
 
-Das Programm wird eine einfache Nachricht und die generierte Prosa basierend auf den implementierten Satz-Klassen in der Konsole ausgeben.
+Nach dem Aufruf initialisiert die JVM die Hauptklasse, verarbeitet die Textbausteine und gibt die formatierte Prosa in der Konsolenausgabe aus.
 
-## Abhängigkeit zu Prose-Builder
+## Externe Abhängigkeiten
 
-My-Prose-App1 ist auf Prose-Builder angewiesen, welches als Maven-Abhängigkeit in der `pom.xml` enthalten ist:
+Die Kernkomponenten basieren auf der Kopplung des folgenden Artefakts in der `pom.xml`:
 
-URL zum Repository: [https://maven.pkg.github.com/bs-jokri/prose-builder](https://maven.pkg.github.com/bs-jokri/prose-builder)
+* **Repository-Endpunkt:** [https://github.com](https://github.com)
 
 ```xml
 <dependency>
-    <groupId>de.htw_berlin.fb4.ossd</groupId>
-    <artifactId>prose_builder</artifactId>
-    <version>1.0-0</version>
+   <groupId>de.htw_berlin.fb4.ossd</groupId>
+   <artifactId>prose_builder</artifactId>
+   <version>1.0-0</version>
 </dependency>
 ```
 
-## Beitrag
+## Community-Richtlinien (Contributions)
 
-Beiträge und Verbesserungen sind herzlich willkommen! Um mitzumachen, folge diesen Schritten:
+Fehlerkorrekturen und funktionale Erweiterungen können über den standardisierten GitHub-Flow eingereicht werden:
 
-1. Forke das Repository.
-2. Erstelle einen neuen Feature-Branch (`git checkout -b feature/neues-feature`).
-3. Committe die Änderungen (`git commit -m 'Neues Feature hinzugefügt'`).
-4. Push zu deinem Branch (`git push origin feature/neues-feature`).
-5. Sende einen Pull Request.
+1. Projekt-Fork auf dem eigenen Profil erstellen.
+2. Lokalen Arbeitszweig anlegen (`git checkout -b feature/optimierung`).
+3. Änderungen versionieren (`git commit -m 'Fix: Beschreibung'`).
+4. Zweig hochladen (`git push origin feature/optimierung`).
+5. Pull Request (PR) zur Überprüfung einreichen.
 
-## Lizenz
+## Lizenzierung
 
-Dieses Projekt wird unter der MIT-Lizenz lizenziert. Es erlaubt freie Nutzung, Modifikation und Verteilung unter Beibehaltung der Lizenz- und Urheberrechtsbedingungen. Details findest du in der `LICENSE`-Datei.
+Die Distribution dieses Projekts erfolgt unter den rechtlichen Bedingungen der **MIT-Lizenz**. Modifikationen, gewerbliche Nutzungen und Weiterverbreitungen sind unter Erhalt des originalen Urheberrechtshinweises uneingeschränkt zulässig. Details entnehmen Sie der lokalen `LICENSE`-Datei.
 
-## Kontakt
+## Support und Fehlermeldungen
 
-Bei Fragen oder Anregungen zu My-Prose-App1 kann direkt über das GitHub Repository ein Issue erstellt werden.
+Für technische Rückfragen, Code-Reviews oder das Melden von Inkompatibilitäten nutzen Sie bitte die offizielle **Issues-Sektion** dieses GitHub-Repositories.
+
+---
+
+## Exercise 1: Conceptual Questions (Strikte Folien-Fakten kurz gefasst)
+
+| Nr. | Konzeptfrage (Exercise 1) | Kernunterschied / Rechtliche Begründung (UrhG & Folien-Fakten) |
+| :---: | :--- | :--- |
+| **1** | Permissive vs. Copyleft Lizenzen | Permissive Lizenzen (z. B. Apache 2.0) erlauben die Schließung und Integration in proprietäre Software. Copyleft Lizenzen (z. B. GPLv2) erzwingen durch den viralen Effekt die Offenlegung jeglicher Modifikationen unter derselben Lizenz. |
+| **2** | Relevanz der Lizenzauswahl | Nach §69c UrhG liegen alle Verwertungsrechte exklusiv beim Schöpfer. Ohne Lizenz gilt „Alle Rechte vorbehalten“, was jede Vervielfältigung, Bearbeitung oder Nutzung durch Dritte gesetzlich illegal macht. |
+| **3** | Rechteinhaber des Linux-Kernels in RHEL | Die Nutzungsrechte gewährt der ursprüngliche Autor (Programmierer) über die GPLv2. Da Urheberrechte laut §29 UrhG unübertragbar sind, hält Red Hat als Vendor keine Rechte am Kerncode, sondern bündelt nur die Distribution. |
+| **4** | Zusammenspiel LICENSE und Headers | Die LICENSE-Datei regelt den Rahmen des Gesamtrepositories. License Headers sichern den Schutz auf Modulebene, da isoliert kopierte Quellcodedateien im Open-Source-Netzwerk ansonsten ihren Haftungsausschluss verlieren. |
+| **5** | Funktion der Community-Dateien (.md) | CONTRIBUTING.md sichert den technischen Einreichungsprozess und Code-Qualität. CODE_OF_CONDUCT.md garantiert ein diskriminierungsfreies Miteinander, und SECURITY.md etabliert geschçtzte Kanäle für sensible Fehlermeldungen. |
+| **6** | Transfer an eine Stiftung (Foundation) | Sinnvoll bei starkem Wachstum zur Erreichung von Hersteller-Neutralität (Vendor-Neutrality). Stiftungen verwalten Markenrechte neutral, sichern die IP-Compliance und schützen das Ökosystem durch kollektive Patent-Pools. |
+| **7** | Inhaltliche Abgrenzung NOTICE vs. LICENSE | Die LICENSE enthält den reinen, unveränderten Lizenztext. Die NOTICE beinhaltet dynamische Projekt-Metadaten (Copyright-Inhaber, Markenrechte, Drittkomponenten), die bei jeder Weiterverbreitung zwingend erhalten bleiben müssen. |
+
+---
+
+## Exercise 2: License Selection Matrix ("Prose-Builder" Analyse)
+
+Das Team fordert: Freies Teilen, Modifikationen erlaubt unter Namensnennung (Credit), keinerlei kommerzielle Barrieren.
+
+| Lizenz-Kandidat | Berechtigungen (Features) | Verpflichtungen (Obligations) | Restriktionen (Einschränkungen) | Passfähigkeit zum Szenario |
+| :--- | :--- | :--- | :--- | :--- |
+| **MIT License** | Freie Nutzung, Bearbeitung, kommerzieller Vertrieb. | Erhalt des originalen Copyright-Hinweises in allen Kopien. | Keine integrierte Patentklausel oder Haftungsansprüche. | **Möglich, aber suboptimal:** Erfüllt die Grundkriterien, bietet dem Team aber keinen Schutz vor späteren Patentklagen. |
+| **GNU GPL v2** | Kopieren, Ändern und Verbreiten des Codes. | Abgeleitete Werke (Derivative Works) müssen zwingend quelloffen unter GPLv2 stehen. | Verhindert die Integration in geschlossene, kommerzielle Softwareprodukte. | **Ausgeschlossen:** Widerspricht direkt der Teamanforderung „Keine kommerziellen Einschränkungen“. |
+| **Apache License 2.0** | Freies Nutzen, Ändern, Verbreiten und kommerzielles Verwerten. | Erhalt aller Copyright-, Marken- und Patentzeichen sowie Mitauslieferung der NOTICE-Datei. | Gewährt explizite Patentrechte; automatischer Lizenzentzug bei Patentklagen gegen das Projekt. | **Perfekter Fit (Gewählte Lizenz):** Garantiert den geforderten Credit (Zuschreibung) rechtssicher und sichert das Tool durch moderne Patent-Klauseln ab. |
