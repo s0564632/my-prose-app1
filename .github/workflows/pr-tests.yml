@@ -1,6 +1,8 @@
 name: Pull Request Tests
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -10,13 +12,39 @@ jobs:
 
     steps:
       - name: Code auschecken
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Java JDK 21 einrichten
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '21'
           distribution: 'temurin'
+
+      - name: Maven settings.xml für HTW GitHub Packages generieren
+        run: |
+          mkdir -p ~/.m2
+          echo "<settings>
+            <servers>
+              <server>
+                <id>github</id>
+                <username>s0564632</username>
+                <password>\${{ secrets.OSSD_TOKEN }}</password>
+              </server>
+            </servers>
+            <profiles>
+              <profile>
+                <id>github-packages</id>
+                <activation><activeByDefault>true</activeByDefault></activation>
+                <repositories>
+                  <repository>
+                    <id>github</id>
+                    <url>https://maven.pkg.github.com/bs-jokri/prose-builder</url>
+                    <snapshots><enabled>true</enabled></snapshots>
+                  </repository>
+                </repositories>
+              </profile>
+            </profiles>
+          </settings>" > ~/.m2/settings.xml
 
       - name: Automated Maven Tests ausführen
         run: mvn clean test
