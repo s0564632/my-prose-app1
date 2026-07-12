@@ -1,3 +1,26 @@
+# Exercise 1: Conceptual Questions
+
+## 1. Difference between permissive and copyleft open source licenses
+Permissive Lizenzen (z. B. die MIT-Lizenz) erlauben es Nutzern, den Code fast ohne Einschränkungen zu verwenden, zu verändern und sogar in geschlossener Kaufsoftware zu verbreiten. Copyleft-Lizenzen (z. B. die GNU GPL) verlangen dagegen, dass jede modifizierte Version der Software unter denselben freien Bedingungen weitergegeben werden muss. Dieser Mechanismus wird auch als viraler Effekt bezeichnet und sichert die dauerhafte Offenheit des Quellcodes.
+
+## 2. Importance of choosing a license when releasing open source software
+Ohne eine explizite Lizenz gilt für veröffentlichten Quellcode rechtlich automatisch der Standardzustand „Alle Rechte vorbehalten“ (*All rights reserved*). Das bedeutet, dass andere Entwickler den Code zwar einsehen, ihn aber weder legal kopieren, verändern noch in eigenen Projekten nutzen dürfen. Erst eine gewählte Lizenz schafft die nötige Rechtssicherheit und wandelt das Repository in echtes Open-Source-Material um.
+
+## 3. Rights grant for the Linux Kernel in Red Hat Enterprise Linux (RHEL)
+Die Nutzungsrechte für den Linux-Kernel werden dir direkt von den ursprünglichen Urhebern und Entwicklern des Kernels gewährt, nicht von der Firma Red Hat. Da der Kernel unter der Copyleft-Lizenz GPLv2 steht, agiert Red Hat nur als Distributor, der die Software bündelt und Support verkauft. Das Urheberrecht bleibt bei den einzelnen Autoren, die dir über die GPLv2-Lizenz die direkten, unveräußerlichen Rechte einräumen.
+
+## 4. Importance of including both a LICENSE file and license headers in an open source project
+Die zentrale `LICENSE`-Datei im Hauptverzeichnis legt die rechtlichen Spielregeln für das gesamte Projekt verbindlich fest. Zusätzliche Lizenz-Header in jeder einzelnen Quellcodedatei sind wichtig, da Entwickler oft isolierte Dateien in andere Projekte kopieren. Ohne diesen eingebetteten Header würde eine kopierte Datei sofort ihren rechtlichen Kontext und den Nachweis ihrer Erlaubnisse verlieren.
+
+## 5. Role of CONTRIBUTING.md, CODE_OF_CONDUCT.md, and SECURITY.md
+Diese drei Dokumente bilden das organisatorische, soziale und sicherheitsrelevante Fundament für eine gesunde Community. Die `CONTRIBUTING.md` erklärt Entwicklern den technischen Ablauf für das Einreichen von Code, während der `CODE_OF_CONDUCT.md` menschliche Verhaltensregeln gegen Diskriminierung festlegt. Die `SECURITY.md` sichert das Projekt ab, indem sie einen diskreten Meldeweg für kritische Sicherheitslücken abseits der Öffentlichkeit definiert.
+
+## 6. When to transfer stewardship of an open source project to a foundation
+Die Übergabe an eine neutrale Stiftung ist sinnvoll, wenn ein Projekt so groß wird, dass die Abhängigkeit von einer einzelnen Person oder Firma das Wachstum bremst. Eine Foundation bietet einen wettbewerbsneutralen Raum, der das Misstrauen konkurrierender Unternehmen abbaut und die gemeinsame Entwicklung fördert. Zudem übernimmt die Stiftung die treuhändische Verwaltung von Markenrechten und sorgt für rechtliche sowie finanzielle Absicherung.
+
+## 7. Key contents of a NOTICE file vs. a LICENSE file
+Eine `LICENSE`-Datei enthält den reinen, unveränderten Text der gewählten Lizenz und definiert, was Nutzer mit dem Code tun dürfen. Die `NOTICE`-Datei hingegen enthält spezifische Urheberrechtshinweise, Marken-Nennungen und Pflichtangaben zu genutzten Drittanbieter-Komponenten, die zwingend weiterverbreitet werden müssen. Während die Lizenz also Erlaubnisse erteilt, stellt die NOTICE-Datei die Erfüllung der gesetzlichen Namensnennungspflicht (*Attribution*) sicher.
+
 # My-Prose-App1
 
 My-Prose-App1 ist ein Beispiel für die Verwendung des Prose-Builder-Projekts im Modul *Open Source Software Development* an der HTW-Berlin. Es zeigt, wie mit dem ProseBuilder aus der prose_builder Bibliothek einfache Sätze zu Prosatexten zusammengefügt werden können.
