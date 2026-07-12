@@ -10,7 +10,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     
-    # Erlaubt der Pipeline ausdrücklich das Lesen von externen GitHub Packages
+    
     permissions:
       contents: read
       packages: read
@@ -19,10 +19,10 @@ jobs:
     - name: Code auschecken
       uses: actions/checkout@v4
 
-    - name: Java JDK 17 einrichten
+    - name: Java JDK 21 einrichten
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
         cache: 'maven'
 
