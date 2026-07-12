@@ -18,9 +18,20 @@
         <repository>
             <id>github</id>
             <url>https://maven.pkg.github.com/bs-jokri/prose-builder</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.htw_berlin.fb4.ossd</groupId>
+            <artifactId>prose_builder</artifactId>
+            <version>1.0-0</version>
+        </dependency>
+    </dependencies>
 </project>
