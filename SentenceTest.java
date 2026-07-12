@@ -26,7 +26,7 @@ public class SentenceTest {
         // Test 1: Überprüfe den Inhalt
         assertEquals("schreibt sauberen Quellcode auf einem Debian-System.", text);
 
-        // Test 2: Überprüft die SatzLänge 
+        // Test 2: Überprüft die SatzLänge
         assertEquals(54, text.length(), "Die Satzlänge stimmt nicht mit dem erwarteten Wert überein.");
     }
 }
