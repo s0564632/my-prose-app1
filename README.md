@@ -1,4 +1,4 @@
-# Exercise 1: Conceptual Questions
+### Exercise 1: Conceptual Questions
 
 ## 1. Difference between permissive and copyleft open source licenses
 Permissive Lizenzen (z. B. die MIT-Lizenz) erlauben es Nutzern, den Code fast ohne Einschränkungen zu verwenden, zu verändern und sogar in geschlossener Kaufsoftware zu verbreiten. Copyleft-Lizenzen (z. B. die GNU GPL) verlangen dagegen, dass jede modifizierte Version der Software unter denselben freien Bedingungen weitergegeben werden muss. Dieser Mechanismus wird auch als viraler Effekt bezeichnet und sichert die dauerhafte Offenheit des Quellcodes.
