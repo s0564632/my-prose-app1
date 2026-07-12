@@ -11,15 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Nutzt das langlebige Hauptversions-Tag für Node24
     - name: Code auschecken
       uses: actions/checkout@v4
 
-    # Nutzt das langlebige Hauptversions-Tag für Node24
     - name: Java JDK 21 einrichten
       uses: actions/setup-java@v4
       with:
-        java-version: '21'
+        java-version: '21'  # HIER SYNCHRONISIERT: Passt jetzt exakt zu deiner Java-21-POM
         distribution: 'temurin'
 
     - name: Maven settings.xml temporär für CI generieren
