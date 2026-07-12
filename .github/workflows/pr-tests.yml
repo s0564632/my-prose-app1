@@ -1,4 +1,4 @@
-kname: Pull Request Tests
+name: Pull Request Tests
 
 on:
   push:
