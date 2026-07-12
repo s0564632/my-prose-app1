@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://apache.org"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://apache.org https://apache.org">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.htw_berlin.fb4.ossd.ro_bot</groupId>
@@ -12,12 +12,14 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
+        <log4j.version>2.24.1</log4j.version>
     </properties>
 
     <repositories>
         <repository>
-            <id>github</id>
-            <url>https://github.com</url>
+            <id>github-prose-builder</id>
+            <name>GitHub Packages - bs-jokri/prose-builder</name>
+            <url>https://maven.pkg.github.com/bs-jokri/prose-builder</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -43,7 +45,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.24.1</version>
+            <version>${log4j.version}</version>
         </dependency>
         <dependency>
             <groupId>de.htw_berlin.fb4.ossd</groupId>
@@ -54,9 +56,9 @@
 
     <distributionManagement>
         <repository>
-            <id>github</id>
+            <id>github-prose-builder</id>
             <name>GitHub Packages</name>
-            <url>https://github.com</url>
+            <url>https://maven.pkg.github.com/s0564632/my-prose-app1</url>
         </repository>
     </distributionManagement>
 

@@ -11,19 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Code auschecken
-      uses: actions/checkout@v4
+      - name: Code auschecken
+        uses: actions/checkout@v4
 
-    - name: Java JDK 21 einrichten
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'  # HIER SYNCHRONISIERT: Passt jetzt exakt zu deiner Java-21-POM
-        distribution: 'temurin'
+      - name: Java JDK 21 einrichten
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          server-id: github-prose-builder
+          server-username: ${{ github.actor }}
+          server-password: ${{ secrets.OSSD_TOKEN }}
 
-    - name: Maven settings.xml temporär für CI generieren
-      run: |
-        mkdir -p ~/.m2
-        echo "<settings><servers><server><id>github</id><username>s0564632</username><password>${{ secrets.OSSD_TOKEN }}</password></server></servers></settings>" > ~/.m2/settings.xml
-
-    - name: Automated Maven Tests ausführen
-      run: mvn clean test
+      - name: Automated Maven Tests ausführen
+        run: mvn clean test
