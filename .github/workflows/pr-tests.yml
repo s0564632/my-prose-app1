@@ -11,17 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Upgrade auf die Node24-kompatible Unterversion
     - name: Code auschecken
       uses: actions/checkout@v4.2.2
 
-    # Upgrade auf die Node24-kompatible Unterversion
     - name: Java JDK 21 einrichten
       uses: actions/setup-java@v4.3.0
       with:
         java-version: '21'
         distribution: 'temurin'
-        cache: 'maven'
 
     - name: Maven settings.xml temporär für CI generieren
       run: |
@@ -30,4 +27,3 @@ jobs:
 
     - name: Automated Maven Tests ausführen
       run: mvn clean test
-
